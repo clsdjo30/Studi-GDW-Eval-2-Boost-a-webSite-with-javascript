@@ -44,9 +44,9 @@ The first player to reach 100 points on global wins the game.
 Of course the site will have to be responsive and at the request of the customer the interface will have to be designed mobile
 
 ### Screenshot
-![desktop View](./design-website-view/desktop-view.png)
+![desktop View](./design-website-view/)
 
-![Mobile View](./design-website-view/mobile-view.png)
+![Mobile View](./design-website-view/)
 
 ### Links
 
