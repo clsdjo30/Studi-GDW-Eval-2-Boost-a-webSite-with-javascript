@@ -4,16 +4,79 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Studi Dice Game</title>
         <meta name="description" content="Studi Dice GAme - a two player dice game ">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/dist/output.css" rel="stylesheet">
     </head>
-    <body>
+    <body 
+    class="h-screen md:w-1/2 mx-auto bg-center backdrop-filter backdrop-blur-sm bg-cover bg-no-repeat"
+    style="background-image: url(./dist/images/bg/bg-2.jpg)"
+    id="bg-blur"
+    >
        
-        <h1 class="text-5xl text-center text-indigo-900">Hello Dice GAme</h1>
+        <main class="w-full mx-auto flex flex-col justify-center items-center overflow-hidden">
+            <section class="relative w-full h-screen flex flex-col justify-center items-center">
+                <!-- PLAYER PAD -->
+            <div class="flex items-center space-x-2 px-2 "
+            id="players">
+            <!-- PLAYER 1 -->
+            <div class="glass-card flex w-auto h-80" id="player0">
+                <div class="px-4 flex flex-col justify-evenly items-center">
+                    <div class="w-full flex flex-col items-center">
+                        <h1 id="name-player-0" class="player-title ">Player 1</h1>
+                        <h2 id="score-player-0" class="player-score">0</h2>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="player-current-score">Current Score</h3>
+                        <h4 id="current-0" class="current-0">0</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- PLAYER 2 -->
+            <div class="glass-card flex w-auto h-80 opacity-100 active" id="player1">
+                <div class="px-4 flex flex-col justify-evenly items-center">
+                    <div class="flex flex-col items-center">
+                        <h1 id="name-player-1" class="player-title active-player">Player 2</h1>
+                        <h2 id="score-player-1" class="player-score active-player-score">0</h2>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="player-current-score">Current Score</h3>
+                        <h4 id="current-1" class="current-1 active-current-score">0</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- GAME PAD  -->
+        <div class="border-2 glass-card -top-80 px-14 flex flex-col justify-center items-center"
+            id="game-btn">
+            <div class=""  >
+                <img class="h-32 rounded-lg "
+                    src="./dist/images/dices/3d-dice-1.svg" alt="" id="dice" />
+            </div>
+            <!-- opacity-100 when you have a ONE -->
+            <p class="opacity-0 py-12 text-xl font-bold text-red-900 transform scale-50" id="do-1">
+                ONE ! Pass your turn
+            </p>
+            <!-- display block when you have a ONE -->
+            <div class="w-full flex flex-col justify-between content-center ">
+                <div class="flex justify-between space-x-2 mb-2">
+                    <button id="roll-dice" class="game-btn w-20">
+                        Lancer
+                    </button>
+                    <button id="hold-dice" class="game-btn w-20">Garder</button>
+                </div>
+                <button id="new-game" class="game-btn mt-4">New Game</button>
+            </div>
+        </div>
+
+         <!-- MODAl OPTION DE JEU -->
+
+                
+            </section>
+        </main>
         
-        <script src="" async defer></script>
+        
     </body>
 </html>
 

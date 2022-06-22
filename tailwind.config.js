@@ -2,6 +2,11 @@
 module.exports = {
   content: ["index.html"],
   theme: {
+    fontFamily : {
+      'sans': ['Poppins'],
+      'body': ['MuseoModerno'],
+      'player': ['Orbitron']
+    },
     extend: {},
   },
   plugins: [],
