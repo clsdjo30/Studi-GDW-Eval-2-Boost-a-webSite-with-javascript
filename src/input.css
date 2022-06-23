@@ -41,7 +41,16 @@
     .active-current-score {
         @apply text-4xl font-light text-indigo-200
     }
+    .pactole {
+       @apply pb-5 text-center text-xl font-player text-yellow-400  
+    }
+    .modal-card {
+        @apply rounded-lg bg-purple-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border border-gray-50 drop-shadow-md shadow-gray-100
+
+    }
     .game-btn {
         @apply text-sm text-indigo-200 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-indigo-500 ring-1  py-2 px-4 w-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 border border-purple-300 drop-shadow-md shadow-gray-100
     }
+
+   
 }

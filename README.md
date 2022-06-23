@@ -105,6 +105,49 @@ Add link bellow in *`<head>`*
 ### What I learned
 
 
+#### Setting up modal windows
+##### How it work
+To make the window appear we will delete the hidden class
+and to close the window we add the class flex.
+
+To make "the modal" work, we need buttons and a window.
+We target the window with an "id"
+```
+<div class="hidden fixed z-50  mx-auto" id="rule-display">
+    -------Content of modal
+</div>
+```
+
+Open button with "onclick" parameter
+```
+<button 
+    id="rule-btn"
+    class="game-btn relative capitalize text-pink-900 font-bold "
+    onclick="toggleModalRule('rule-display')"
+    >
+    Learn to play
+</button>
+```
+Close Button with "onclick" parameter
+```
+<button 
+    class="game-btn w-1/3 text-xs" 
+    type="button" 
+    onclick="toggleModalRule('rule-display')"
+    >
+    Close
+</button>
+```
+Javascript File to toogle 
+```
+function toggleModalRule(ruleDisplay) {
+    let showRule = document.querySelector("#rule-display");
+    showRule.classList.toggle("hidden");
+    showRule.classList.toggle("flex");
+}
+```
+
+
 
 
 

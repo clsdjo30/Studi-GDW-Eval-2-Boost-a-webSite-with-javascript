@@ -18,17 +18,20 @@
         <main class="w-full mx-auto flex flex-col justify-center items-center overflow-hidden">
             <section class="relative w-full h-screen flex flex-col justify-center items-center">
                 <!-- PLAYER PAD -->
-            <div class="flex items-center space-x-2 px-2 "
-            id="players">
+            <div class="flex items-center space-x-2 px-2 absolute bottom-full transform -translate-y-full scale-0 opacity-100"
+                 id="players">
             <!-- PLAYER 1 -->
-            <div class="glass-card flex w-auto h-80" id="player0">
+            <div class="glass-card flex w-auto h-80 opacity-100" id="player0">
                 <div class="px-4 flex flex-col justify-evenly items-center">
                     <div class="w-full flex flex-col items-center">
-                        <h1 id="name-player-0" class="player-title ">Player 1</h1>
-                        <h2 id="score-player-0" class="player-score">0</h2>
+                        <h2 id="name-player-0" class="player-title ">Player 1</h2>
+                        <p class="pactole">Pactole</p>
+                        <p id="score-player-0" class="player-score">0</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <h3 class="player-current-score">Current Score</h3>
+                        <h3 class="player-current-score">
+                            Cagnotte
+                        </h3>
                         <h4 id="current-0" class="current-0">0</h4>
                     </div>
                 </div>
@@ -37,20 +40,21 @@
             <div class="glass-card flex w-auto h-80 opacity-100 active" id="player1">
                 <div class="px-4 flex flex-col justify-evenly items-center">
                     <div class="flex flex-col items-center">
-                        <h1 id="name-player-1" class="player-title active-player">Player 2</h1>
-                        <h2 id="score-player-1" class="player-score active-player-score">0</h2>
+                        <h2 id="name-player-1" class="player-title active-player">Player 2</h2>
+                        <p class="pactole">Pactole</p>
+                        <p id="score-player-1" class="player-score active-player-score">0</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <h3 class="player-current-score">Current Score</h3>
+                        <h3 class="player-current-score">Cagnotte</h3>
                         <h4 id="current-1" class="current-1 active-current-score">0</h4>
                     </div>
                 </div>
             </div>
         </div>
         <!-- GAME PAD  -->
-        <div class="border-2 glass-card -top-80 px-14 flex flex-col justify-center items-center"
+        <div class="border-2 glass-card -top-80 px-14 flex flex-col justify-center items-center h-64 absolute bottom-full transform -translate-y-full scale-0 opacity-100"
             id="game-btn">
-            <div class=""  >
+            <div class="">
                 <img class="h-32 rounded-lg "
                     src="./dist/images/dices/3d-dice-1.svg" alt="" id="dice" />
             </div>
@@ -71,12 +75,130 @@
         </div>
 
          <!-- MODAl OPTION DE JEU -->
+         <!--Add hidden to hide the game option-->
+           <div class="hidden fixed z-50  mx-auto px-16" id="modal-id">
+            <!--Add modal card class-->>
+                <div class="relative mx-auto modal-card">
+                    <!--content-->
+                    <div class="relative p-6 flex flex-col justify-center items-center">
+                        <h3 class="font-modal text-2xl text-center text-purple-200 font-semibold mb-6">
+                            Game Options
+                        </h3>
+                        <label for="player-one-name" class="leading-7 font-modal text-base text-purple-200">Player One Name
+                        </label>
+                        <input type="text" id="player-0-name" name="player-one-name"
+                            class="w-full text-center font-medium uppercase rounded border borde-pink-300 opacity-60 focus:border-pink-700 focus:ring-2 focus:ring-pink-900 text-lg outline-none text-indigo-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+
+                        <label for="player-two-name" class="leading-7 font-modal text-base text-purple-200">Player Two Name</label>
+                        <input type="text" id="player-1-name" name="player-two-name"
+                            class="w-full text-center uppercase rounded border borde-pink-300 opacity-60 focus:border-pink-700 focus:ring-2 focus:ring-pink-900 text-lg outline-none text-indigo-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+
+                        <label for="number-points" class="leading-7 font-modal text-base text-purple-200">Needed Point for
+                            Victory</label>
+
+                        <select type="number" id="points-choice"
+                            class="w-full text-center uppercase rounded border borde-pink-300 opacity-60 focus:border-pink-700 focus:ring-2 focus:ring-pink-900 text-lg outline-none text-indigo-900 font-modal py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                        </select>
+
+
+                    </div>
+                    <!--footer-->
+                    <div class="flex items-center justify-end space-x-2 p-4 ">
+                        <!--Add game-btn class-->
+                        <button class="game-btn w-1/3 text-xs" type="button" onclick="toggleModal('modal-id')">
+                            close
+                        </button>
+                         <!--Add game-btn class-->
+                        <button class="game-btn mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                            id="throw-game">
+                            Let's PLay!
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--END OF MODAL GAME PARAMETER -->
+            <!-- START OF MODAL RULES -->
+            <!--Add hidden-->
+            <div class="hidden fixed z-50  mx-auto" id="rule-display">
+                <div class="relative w-4/5 mx-auto modal-card ">
+                    <!--content-->
+                    <div class="relative p-2 flex flex-col justify-center items-center">
+                        <h3 class="text-2xl font-modal text-center text-purple-200 font-semibold mb-6 capitalize">
+                            règles du jeu
+                        </h3>
+                        <div class="w-full bg-purple-400 text-center rounded opacity-90 py-4 px-2">
+                            <h3 class="font-modal uppercase">Comment Gagner ?</h3>
+                            <p class="text-xs font-modal text-justify text-blue-100">
+                              Rien de plus simple, le premier joueur à atteindre le Pactole choisi, remporte la partie.
+                            </p>
+                          
+                            <p class="text-xs underline font-modal text-justify text-blue-100 pt-2"><span class="font-bold">Règles: </span></p>
+                            <div class="flex justify-start px-6 mx-auto">
+                                <ul class="list-disc text-xs font-modal text-justify text-blue-100">
+                                    <li>Le joueur commence son tour en lancant le dés avec le boutton <span class="font-bold">"Lancer"</span>.</li>
+                                    <li>Durant son tour, chaque dés lancer fera gonfler sa cagnotte</li>
+                                    <li>Si le joueur fait un <span class="font-bold">1</span>, il passe son tour. </li>                        
+                                    <li>En Cliquant sur <span class="font-bold">"Gardez"</span>, le joueur conserver sa cagnotte dans son Pactolle, puis pass son tour.  </li>
+                                </ul>
+                            </div>
+                            <p class="font-modal capitalize mt-4">Bonne Parties</p>
+                        </div>
+
+
+
+                    </div>
+                    <!--footer-->
+                    <div class="flex items-center justify-end space-x-2 p-4 ">
+                        <button 
+                        class="game-btn w-1/3 text-xs" 
+                        type="button" 
+                        onclick="toggleModalRule('rule-display')"
+                        >
+                            Close
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+<!--END OF MODAL RULES -->
+
+<!--GAME LOADER & GAME STARTING BUTTON-->
+            <div class="flex flex-col items-center h-screen w-full justify-center opacity-100 transform scale-150" id="loader">
+                <h1 class="relative text-title flex flex-col justify-center items-center font-player font-semibold -mt-16 py-16">
+                    <span id="span-1" class="text-4xl tracking-wider text-blue-700">READY</span>
+                    <span id="span-2" class="text-6xl tracking-widest text-pink-900">TO</span>
+                    <span id="span-3" class="text-4xl tracking-wider text-blue-700">PLAY </span>
+                </h1>
+
+                <div class="flex flex-col items-center w-1/2 space-y-4 scale" id="loader-btn">
+                    <button
+                    id="start-btn"
+                    class="game-btn relative capitalize text-pink-900 font-bold " onclick="toggleModal('modal-id')">
+                        start game
+                    </button>
+                    <button 
+                    id="rule-btn"
+                    class="game-btn relative capitalize text-pink-900 font-bold "
+                        onclick="toggleModalRule('rule-display')">
+                        learn to play
+                    </button>
+                </div>
+            </div>
 
                 
             </section>
         </main>
         
-        
+       <!--LOAD JS FILES--> 
+       <script src="./dist/js/modalShowRules.js"></script>
+       <script src="./dist/js/modalGameStart.js"></script>
     </body>
 </html>
 
