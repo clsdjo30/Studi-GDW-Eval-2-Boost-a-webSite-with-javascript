@@ -5,7 +5,8 @@ module.exports = {
     fontFamily : {
       'sans': ['Poppins'],
       'body': ['MuseoModerno'],
-      'player': ['Orbitron']
+      'player': ['Orbitron'],
+      'modal' : ['Lato']
     },
     extend: {},
   },
