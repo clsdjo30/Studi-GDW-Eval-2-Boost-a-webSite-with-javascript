@@ -147,6 +147,13 @@ function toggleModalRule(ruleDisplay) {
 }
 ```
 
+#### Gsap library for animation
+
+I chose to animate several elements of my game using the GreenSock library, notably to make a loader with the letters of the name of the game animated letter by letter, the appearance of the game board, and the dice roll.  
+
+I used CDN : [Gsap](https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easel,text#cdn)
+
+
 
 
 
