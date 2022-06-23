@@ -122,8 +122,8 @@
 
             </div>
 
-            <!-- FIN DE MODAL OPTION DE JUEX -->
-            <!-- MODAl REGLE DE JEU -->
+            <!--END OF MODAL GAME PARAMETER -->
+            <!-- START OF MODAL RULES -->
             <!--Add hidden-->
             <div class="hidden fixed z-50  mx-auto" id="rule-display">
                 <div class="relative w-4/5 mx-auto modal-card ">
@@ -162,6 +162,30 @@
                     </div>
                 </div>
 
+            </div>
+<!--END OF MODAL RULES -->
+
+<!--GAME LOADER & GAME STARTING BUTTON-->
+            <div class="flex flex-col items-center h-screen w-full justify-center opacity-100 transform scale-150" id="loader">
+                <h1 class="relative text-title flex flex-col justify-center items-center font-player font-semibold -mt-16 py-16">
+                    <span id="span-1" class="text-4xl tracking-wider text-blue-700">READY</span>
+                    <span id="span-2" class="text-6xl tracking-widest text-pink-900">TO</span>
+                    <span id="span-3" class="text-4xl tracking-wider text-blue-700">PLAY </span>
+                </h1>
+
+                <div class="flex flex-col items-center w-1/2 space-y-4 scale" id="loader-btn">
+                    <button
+                    id="start-btn"
+                    class="game-btn relative capitalize text-pink-900 font-bold " onclick="toggleModal('modal-id')">
+                        start game
+                    </button>
+                    <button 
+                    id="rule-btn"
+                    class="game-btn relative capitalize text-pink-900 font-bold "
+                        onclick="toggleModalRule('rule-display')">
+                        learn to play
+                    </button>
+                </div>
             </div>
 
                 
