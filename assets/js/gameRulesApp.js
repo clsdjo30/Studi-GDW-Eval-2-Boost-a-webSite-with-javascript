@@ -21,7 +21,7 @@ btnRoll.addEventListener('click', () => {
     //Displays dice's SVG corresponding to the result of random number
     let domDice =  document.querySelector('#dice');
     domDice.style.display = 'block'
-    domDice.src ='./images/dices/3d-dice-'+ dice + '.svg';
+    domDice.src ='./assets/images/dices/3d-dice-'+ dice + '.svg';
  
  if (dice !== 1)
 { 
