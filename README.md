@@ -44,9 +44,8 @@ The first player to reach 100 points on global wins the game.
 Of course the site will have to be responsive and at the request of the customer the interface will have to be designed mobile
 
 ### Screenshot
-![desktop View](./design-website-view/)
+![Home Page](./design-website-view/home_page.png)
 
-![Mobile View](./design-website-view/)
 
 ### Links
 
@@ -156,8 +155,5 @@ I used CDN : [Gsap](https://greensock.com/docs/v3/Installation?checked=core,scro
 
 
 
-
-
 ## Author
 Cedric Le  Sergent 
-- Website - [in construction](/#)

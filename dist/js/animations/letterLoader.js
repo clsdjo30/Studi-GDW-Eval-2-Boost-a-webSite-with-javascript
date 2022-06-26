@@ -9,10 +9,11 @@ const splitText = (selector) => {
     charsContainer.style.position = "relative";
     charsContainer.style.display = "inline-block";
     
+// word divisions to create a letter board
     chars.forEach((char) => {
         const charContainer = document.createElement("div");
         
-        charContainer.style.position = "relative";
+         charContainer.style.position = "relative";
         charContainer.style.display = "inline-block";
         charContainer.innerText = char;
         charsContainer.appendChild(charContainer);
@@ -30,9 +31,7 @@ const splitText = (selector) => {
 const animate = function (text) {
     // const charsOne = splitText("#span-1");
     const chars = [splitText("#span-1"), splitText("#span-2"), splitText("#span-3")];
-    console.log(chars);
-    
-    
+        
     return gsap
     .from(chars, {
         duration: 1,
