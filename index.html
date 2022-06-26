@@ -54,13 +54,13 @@
         <!-- GAME PAD  -->
         <div class="border-2 glass-card -top-80 px-14 flex flex-col justify-center items-center h-64 absolute bottom-full transform -translate-y-full scale-0 opacity-100"
             id="game-btn">
-            <div class="">
+            <div class="absolute -top-9 transform translate-y-9">
                 <img class="h-32 rounded-lg "
                     src="./dist/images/dices/3d-dice-1.svg" alt="" id="dice" />
             </div>
             <!-- opacity-100 when you have a ONE -->
             <p class="opacity-0 py-12 text-xl font-bold text-red-900 transform scale-50" id="do-1">
-                ONE ! Pass your turn
+                1 ! Passe ton tour...
             </p>
             <!-- display block when you have a ONE -->
             <div class="w-full flex flex-col justify-between content-center ">
@@ -70,11 +70,11 @@
                     </button>
                     <button id="hold-dice" class="game-btn w-20">Garder</button>
                 </div>
-                <button id="new-game" class="game-btn mt-4">New Game</button>
+                <button id="new-game" class="game-btn mt-4 capitalize">nouvelle partie</button>
             </div>
         </div>
 
-         <!-- MODAl OPTION DE JEU -->
+         <!--START OF MODAL GAME PARAMETER -->
          <!--Add hidden to hide the game option-->
            <div class="hidden fixed z-50  mx-auto px-16" id="modal-id">
             <!--Add modal card class-->>
@@ -84,24 +84,23 @@
                         <h3 class="font-modal text-2xl text-center text-purple-200 font-semibold mb-6">
                             Game Options
                         </h3>
-                        <label for="player-one-name" class="leading-7 font-modal text-base text-purple-200">Player One Name
+                        <label for="player-one-name" class="leading-7 font-modal text-base text-purple-200 capitalize">pseudo joueur 1
                         </label>
                         <input type="text" id="player-0-name" name="player-one-name"
                             class="w-full text-center font-medium uppercase rounded border borde-pink-300 opacity-60 focus:border-pink-700 focus:ring-2 focus:ring-pink-900 text-lg outline-none text-indigo-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
 
-                        <label for="player-two-name" class="leading-7 font-modal text-base text-purple-200">Player Two Name</label>
+                        <label for="player-two-name" class="leading-7 font-modal text-base text-purple-200 capitalize">pseudo joueur 2 </label>
                         <input type="text" id="player-1-name" name="player-two-name"
                             class="w-full text-center uppercase rounded border borde-pink-300 opacity-60 focus:border-pink-700 focus:ring-2 focus:ring-pink-900 text-lg outline-none text-indigo-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
 
-                        <label for="number-points" class="leading-7 font-modal text-base text-purple-200">Needed Point for
-                            Victory</label>
+                        <label for="number-points" class="leading-7 font-modal text-base text-purple-200 capitalize">la partie se joue en : </label>
 
                         <select type="number" id="points-choice"
                             class="w-full text-center uppercase rounded border borde-pink-300 opacity-60 focus:border-pink-700 focus:ring-2 focus:ring-pink-900 text-lg outline-none text-indigo-900 font-modal py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                            <option value="50">50</option>
-                            <option value="75">75</option>
-                            <option value="100">100</option>
-                            <option value="150">150</option>
+                            <option value="50">50 points</option>
+                            <option value="75">75 points</option>
+                            <option value="100">100 points</option>
+                            <option value="150">150 points</option>
                         </select>
 
 
@@ -109,13 +108,13 @@
                     <!--footer-->
                     <div class="flex items-center justify-end space-x-2 p-4 ">
                         <!--Add game-btn class-->
-                        <button class="game-btn w-1/3 text-xs" type="button" onclick="toggleModal('modal-id')">
-                            close
+                        <button class="game-btn w-1/3 text-xs capitalize" type="button" onclick="toggleModal('modal-id')">
+                            fermer
                         </button>
                          <!--Add game-btn class-->
-                        <button class="game-btn mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                        <button class="game-btn mr-1 mb-1 ease-linear transition-all duration-150 capitalize" type="button"
                             id="throw-game">
-                            Let's PLay!
+                            commençons !!
                         </button>
                     </div>
                 </div>
@@ -123,6 +122,7 @@
             </div>
 
             <!--END OF MODAL GAME PARAMETER -->
+
             <!-- START OF MODAL RULES -->
             <!--Add hidden-->
             <div class="hidden fixed z-50  mx-auto" id="rule-display">
@@ -156,11 +156,11 @@
                     <!--footer-->
                     <div class="flex items-center justify-end space-x-2 p-4 ">
                         <button 
-                        class="game-btn w-1/3 text-xs" 
+                        class="game-btn w-1/3 text-xs capitalize" 
                         type="button" 
                         onclick="toggleModalRule('rule-display')"
                         >
-                            Close
+                            fermer
                         </button>
 
                     </div>
@@ -169,7 +169,7 @@
             </div>
 <!--END OF MODAL RULES -->
 
-<!--GAME LOADER & GAME STARTING BUTTON-->
+<!--START GAME LOADER & GAME STARTING BUTTON-->
             <div class="flex flex-col items-center h-screen w-full justify-center opacity-100 transform scale-150" id="loader">
                 <h1 class="relative text-title flex flex-col justify-center items-center font-player font-semibold -mt-16 py-16">
                     <span id="span-1" class="text-4xl tracking-wider text-blue-700">READY</span>
@@ -177,26 +177,37 @@
                     <span id="span-3" class="text-4xl tracking-wider text-blue-700">PLAY </span>
                 </h1>
 
-                <div class="flex flex-col items-center w-1/2 space-y-4 scale" id="loader-btn">
+                <div class="flex flex-col items-center w-1/3 space-y-4 scale" id="loader-btn">
                     <button
                     id="start-btn"
-                    class="game-btn relative capitalize text-pink-900 font-bold " onclick="toggleModal('modal-id')">
-                        start game
+                    class="game-btn relative capitalize text-pink-900 font-bold opacity-0 transform scale-0 -left-56" onclick="toggleModal('modal-id')">
+                       >> jouer <<
                     </button>
                     <button 
                     id="rule-btn"
-                    class="game-btn relative capitalize text-pink-900 font-bold "
+                    class="game-btn relative capitalize text-pink-900 font-bold opacity-0 transform scale-0 -right-56"
                         onclick="toggleModalRule('rule-display')">
-                        learn to play
+                        comment jouer
                     </button>
                 </div>
             </div>
 
+<!--END GAME LOADER & GAME STARTING BUTTON-->
                 
             </section>
         </main>
         
+        <script src="./dist/js/animations/animeDice.js"></script>
+        <!--IMPORT GREENSOCK CDN + EXTA  PLUGIN / EASEL + TEXT-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/EaselPlugin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
        <!--LOAD JS FILES--> 
+       <script src="./dist/js/gameRulesApp.js"></script>
+       <script src="./dist/js/soundGame.js"></script>
+       <script src="./dist/js/animations/letterLoader.js"></script>
+       <script src="./dist/js/animations/gamePadLoader.js"></script>
+       <script src="./dist/js/animations/haveAone.js"></script>
        <script src="./dist/js/modalShowRules.js"></script>
        <script src="./dist/js/modalGameStart.js"></script>
     </body>

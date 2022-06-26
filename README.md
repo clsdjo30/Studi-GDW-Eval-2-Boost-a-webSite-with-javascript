@@ -44,9 +44,8 @@ The first player to reach 100 points on global wins the game.
 Of course the site will have to be responsive and at the request of the customer the interface will have to be designed mobile
 
 ### Screenshot
-![desktop View](./design-website-view/)
+![Home Page](./design-website-view/home_page.png)
 
-![Mobile View](./design-website-view/)
 
 ### Links
 
@@ -147,10 +146,14 @@ function toggleModalRule(ruleDisplay) {
 }
 ```
 
+#### Gsap library for animation
+
+I chose to animate several elements of my game using the GreenSock library, notably to make a loader with the letters of the name of the game animated letter by letter, the appearance of the game board, and the dice roll.  
+
+I used CDN : [Gsap](https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easel,text#cdn)
 
 
 
 
 ## Author
 Cedric Le  Sergent 
-- Website - [in construction](/#)
